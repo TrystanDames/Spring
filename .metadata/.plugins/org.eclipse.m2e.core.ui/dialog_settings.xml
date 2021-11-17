@@ -6,10 +6,13 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\User\Desktop\Spring work\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch06"/>
+			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch04\tacos"/>
+			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master"/>
+			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch03\tacos-jpa"/>
 			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch02\tacos"/>
 			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch03\tacos-jdbc"/>
 			<item value="C:\Users\User\Desktop\Spring\SpringInAction"/>
-			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master"/>
 			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch02"/>
 			<item value="C:\Users\User\Downloads\spring-in-action-5-samples-master\spring-in-action-5-samples-master\ch01\tacos"/>
 			<item value="C:\Users\User\Desktop\Spring\SpringInAction\pom.xml"/>
