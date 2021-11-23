@@ -33,7 +33,7 @@ public class UserResource {
 		String email = (String) userMap.get("email");
 		String password = (String) userMap.get("password");
 		User user = userService.validateUser(email, password);
-		return new ResponseEntity<>(generateJWTTToken(user), HttpStatus.OK);
+		return new ResponseEntity<>(generateJWTToken(user), HttpStatus.OK);
 	}
 
 	@PostMapping("/register")
@@ -43,10 +43,10 @@ public class UserResource {
 		String email = (String) userMap.get("email");
 		String password = (String) userMap.get("password");
 		User user = userService.registerUser(firstName, lastName, email, password);
-		return new ResponseEntity<>(generateJWTTToken(user), HttpStatus.OK);
+		return new ResponseEntity<>(generateJWTToken(user), HttpStatus.OK);
 	}
 	
-	private Map<String, String> generateJWTTToken(User user) {
+	private Map<String, String> generateJWTToken(User user) {
 		long timestamp = System.currentTimeMillis();
 		String token = Jwts.builder().signWith(SignatureAlgorithm.HS256, Constants.API_SECRET_KEY)
 				.setIssuedAt(new Date(timestamp))

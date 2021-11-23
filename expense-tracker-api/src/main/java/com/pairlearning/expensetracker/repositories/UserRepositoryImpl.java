@@ -56,7 +56,7 @@ public class UserRepositoryImpl implements UserRepository {
 	@Override
 	public User findByEmailAndPassword(String email, String password) throws EtAuthException {
 		try {
-			User user = jdbcTemplate.queryForObject(SQL_FIND_BY_EMAIL, new Object[]{email}, userRowMapper);
+			User user = jdbcTemplate.queryForObject(SQL_FIND_BY_EMAIL, userRowMapper, new Object[]{email});
 			if(!BCrypt.checkpw(password, user.getPassword()))
 				throw new EtAuthException("Invalid email/password");
 			return user;
@@ -67,12 +67,12 @@ public class UserRepositoryImpl implements UserRepository {
 
 	@Override
 	public Integer getCountByEmail(String email) {
-		return jdbcTemplate.queryForObject(SQL_COUNT_BY_EMAIL, new Object[]{email}, Integer.class);
+		return jdbcTemplate.queryForObject(SQL_COUNT_BY_EMAIL,  Integer.class, new Object[]{email});
 	}
 
 	@Override
 	public User findById(Integer userId) {
-		return jdbcTemplate.queryForObject(SQL_FIND_BY_ID, new Object[]{userId}, userRowMapper);
+		return jdbcTemplate.queryForObject(SQL_FIND_BY_ID,  userRowMapper, new Object[]{userId});
 	}
 	
 	private RowMapper<User>userRowMapper = ((rs, rowNum) -> {

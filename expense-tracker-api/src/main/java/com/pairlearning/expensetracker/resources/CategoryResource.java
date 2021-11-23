@@ -54,7 +54,7 @@ public class CategoryResource {
 		return new ResponseEntity<>(category, HttpStatus.CREATED);
 	}
 	
-	@PutMapping("?{categoryId}")
+	@PutMapping("/{categoryId}")
 	public ResponseEntity<Map<String, Boolean>> updateCategory(HttpServletRequest request,
 			@PathVariable("categoryId") Integer categoryId,
 			@RequestBody Category category){

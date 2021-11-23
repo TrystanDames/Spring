@@ -10,7 +10,7 @@
 
 <script>
         fetch('http://localhost:8080/api/categories', {
-            headers: {
+            headers: { 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2Mzc1ODYyODEsImV4cCI6MTYzNzU5MzQ4MSwidXNlcklkIjoxLCJlbWFpbCI6ImRhdmlkQHRlc3RtYWlsLmNvbSIsImZpcnN0TmFtZSI6IkRhdmlkIiwibGFzdE5hbWUiOiJTbWl0aCJ9.z12tnUfP-PyKfkeOCkxwZHEKdY-bEaxBuULcKYVTXlc'
             }
         })
         .then(res => res.json())
