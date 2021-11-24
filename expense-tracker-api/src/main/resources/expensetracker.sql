@@ -1,8 +1,10 @@
 drop database expensetracker;
 drop user expensetracker;
 
-create user expensetracker with password 'password';
-create database expensetracker with template=template0 owner=expensetracker;	
+create user expensetracker with password 'try_Lourens08';
+create database expensetracker with template=template0 owner=postgres;	
+
+\connect expensetracker;
 
 alter default privileges grant all on tables to expensetracker;
 alter default privileges grant all on sequences to expensetracker;
