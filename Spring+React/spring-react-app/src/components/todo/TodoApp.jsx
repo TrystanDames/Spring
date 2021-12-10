@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 
 class TodoApp extends Component {
     render() {
@@ -7,9 +7,13 @@ class TodoApp extends Component {
             <div className="TodoApp">
                 <Router>
                     <>
-                        <Route path="/" exact component={LoginComponent} />
-                        <Route path="/login" component={LoginComponent} />
-                        <Route path="/welcome" component={WelcomeComponent} />
+                        <Switch>
+                            <Route path="/" exact component={LoginComponent} />
+                            <Route path="/login" component={LoginComponent} />
+                            <Route path="/welcome/:name" component={WelcomeComponent} />
+                            <Route path="/todos" component={ListTodosComponent} />
+                            <Route component={ErrorComponent} />
+                        </Switch>
                     </>
                 </Router>
 
@@ -20,9 +24,63 @@ class TodoApp extends Component {
     }
 }
 
+class ListTodosComponent extends Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            todos :
+            [ 
+                {id: 1, description: 'Learn to Dance', done:false, targetDate: new Date()},
+                {id: 2, description: 'Become an Expert at React', done:false, targetDate: new Date()},
+                {id: 3, description: 'Visit England', done:false, targetDate: new Date()}
+            ]
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <h1>List Todos</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Description</th>
+                            <th>Is Completed?</th>
+                            <th>Target Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            this.state.todos.map (
+                                todo =>
+                            
+                            <tr>
+                                <td>{todo.id}</td>
+                                <td>{todo.description}</td>
+                                <td>{todo.done.toString()}</td>
+                                <td>{todo.targetDate.toString()}</td>
+                            </tr>
+                            )
+                        }
+                    </tbody>
+                </table>
+            </div>
+        )
+    }
+}
+
+function ErrorComponent() {
+    return <div>An Error Occurred. I don't know what to do! Contact support at abcd-efgh-ijkl</div>
+}
+
 class WelcomeComponent extends Component{
     render() {
-        return <div>Welcome trystan</div>
+        return (
+            <div>
+                Welcome {this.props.match.params.name}. You can manage your todos <Link to="/todos">here</Link>.
+            </div>
+        )
     }
 }
 
@@ -31,7 +89,7 @@ class LoginComponent extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: 'tryst',
+            username: 'trystan',
             password: '',
             hasLoginFailed: false,
             showSuccessMessage: false
@@ -68,7 +126,7 @@ class LoginComponent extends Component {
 
     loginClicked() {
         if(this.state.username==='trystan' && this.state.password==='dummy') {
-            this.props.history.push("/welcome")
+            this.props.history.push(`/welcome/${this.state.username}`)
             // this.setState({showSuccessMessage:true})
             // this.setState({hasLoginFailed:false})
         }
