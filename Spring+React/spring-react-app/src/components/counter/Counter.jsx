@@ -53,16 +53,16 @@ class Counter extends Component {
 
 class CounterButton extends Component {
 
-    constructor() {
-        super();
+    // constructor() {
+    //     super();
 
-        // this.state = {
-        //     counter: 0
-        // }
+    //     this.state = {
+    //         counter: 0
+    //     }
 
-        // this.increment = this.increment.bind(this);
-        // this.decrement = this.decrement.bind(this);
-    }
+    //     this.increment = this.increment.bind(this);
+    //     this.decrement = this.decrement.bind(this);
+    // }
 
     render() {
 
