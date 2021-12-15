@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import TodoDataService from "../../api/todo/TodoDataService";
+import AuthenticationService from "./AuthenticationService";
 
 class ListTodosComponent extends Component{
     constructor(props){
@@ -6,11 +8,29 @@ class ListTodosComponent extends Component{
         this.state = {
             todos :
             [ 
-                {id: 1, description: 'Learn to Dance', done:false, targetDate: new Date()},
-                {id: 2, description: 'Become an Expert at React', done:false, targetDate: new Date()},
-                {id: 3, description: 'Visit England', done:false, targetDate: new Date()}
             ]
         }
+    }
+
+    // componentWillUnmount() {
+    //     console.log('componentWillUnmount')
+    // }
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log(shouldComponentUpdate)
+    //     console.log(nextProps)
+    //     console.log(nextState)
+    //     return true
+    // }
+
+    componentDidMount() {
+        let username = AuthenticationService.getLoggedInUserName
+        TodoDataService.retrieveAllTodos(username)
+        .then(
+            response => {
+                this.setState({todos: response.data})
+            }
+        )
     }
 
     render() {
@@ -22,8 +42,8 @@ class ListTodosComponent extends Component{
                         <thead>
                             <tr>
                                 <th>Description</th>
-                                <th>Is Completed?</th>
                                 <th>Target Date</th>
+                                <th>Is Completed?</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,8 +53,8 @@ class ListTodosComponent extends Component{
                                 
                                 <tr key={todo.id}>
                                     <td>{todo.description}</td>
-                                    <td>{todo.done.toString()}</td>
                                     <td>{todo.targetDate.toString()}</td>
+                                    <td>{todo.done.toString()}</td>
                                 </tr>
                                 )
                             }
