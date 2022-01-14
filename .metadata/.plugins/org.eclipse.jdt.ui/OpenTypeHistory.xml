@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=SpringInAction/C:\/Users\/User\/.m2\/repository\/org\/springframework\/security\/spring-security-config\/5.5.3\/spring-security-config-5.5.3.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.security=/=/maven.artifactId=/spring-security-config=/=/maven.version=/5.5.3=/=/maven.scope=/compile=/&lt;org.springframework.security.config.annotation.web.configuration(WebSecurityConfigurerAdapter.class[WebSecurityConfigurerAdapter" modifiers="1057" timestamp="1637054512775"/>
+    <typeInfo handle="=Spring-React/C:\/Users\/User\/.m2\/repository\/org\/springframework\/security\/spring-security-config\/5.6.0\/spring-security-config-5.6.0.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.security=/=/maven.artifactId=/spring-security-config=/=/maven.version=/5.6.0=/=/maven.scope=/compile=/&lt;org.springframework.security.config.annotation.web.configuration(WebSecurityConfigurerAdapter.class[WebSecurityConfigurerAdapter" modifiers="1057" timestamp="1641974150716"/>
+</typeInfoHistroy>
