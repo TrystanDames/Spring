@@ -14,12 +14,12 @@ class HelloWorldService {
         let username  = 'trystan'
         let password = 'dummy'
 
-        let basicAuthHEader = 'Basic ' + window.btoa(username + ":" + password)
+        let basicAuthHeader = 'Basic ' + window.btoa(username + ":" + password)
 
         return axios.get(`http://localhost:8080/hello-world/path-variable/${name}`,
             {
                 headers : {
-                    authorization: basicAuthHEader
+                    authorization: basicAuthHeader
                 }
             }
         );
