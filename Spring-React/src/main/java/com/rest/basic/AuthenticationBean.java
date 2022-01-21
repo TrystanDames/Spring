@@ -1,10 +1,10 @@
-package com.rest.webservices.SpringReact.helloworld;
+package com.rest.basic;
 
-public class HelloWorldBean {
+public class AuthenticationBean {
 
 	private String message;
 
-	public HelloWorldBean(String message) {
+	public AuthenticationBean(String message) {
 		this.message = message;
 	}
 
